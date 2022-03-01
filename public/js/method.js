@@ -33,19 +33,17 @@ $(document).ready(function(){
     });
 });
 function load_list(page){
-    loading();
     $.get('?page=' + page, $('#content_filter').serialize(), function(result){
         $('#list_result').html(result);
         main_content('content_list');
-        loaded();
+        ;
     }, "html");
 }
 function load_input(url){
-    loading();
     $.get(url, {}, function(result) {
         $('#content_input').html(result);
         main_content('content_input');
-        loaded();
+        ;
     }, "html");
 }
 

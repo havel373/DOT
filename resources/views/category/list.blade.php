@@ -1,3 +1,4 @@
+    @if($collection->count() > 0)
     <div class="table-responsive">
         <table class="table table-borderless datatable">
             <thead>
@@ -42,3 +43,20 @@
             </tbody>
         </table>
     </div>
+@else
+<div class="table-responsive">
+    <table class="table table-borderless datatable">
+        <thead>
+            <tr class="table-primary">
+                <th>No</th>
+                <th>Category Name</th>
+                <th>Category Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+    <center>
+        <h1>No data</h1>
+    </center>
+</div>
+@endif

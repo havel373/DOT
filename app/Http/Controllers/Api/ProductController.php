@@ -11,9 +11,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return ProductResource::collection(
-            Product::get()
-        );
+        if(Product::count() < 1){
+            return response()->json(['Result' => 'No data'],200);
+        }else{
+            return ProductResource::collection(
+                Product::get()
+            );
+        }
     }
 
     public function store(Request $request)

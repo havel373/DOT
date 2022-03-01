@@ -11,9 +11,13 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return CategoryResource::collection(
-            Category::get()
-        );
+        if(Category::count() < 1){
+            return response()->json(['Result' => 'No data'],200);
+        }else{
+            return CategoryResource::collection(
+                Category::get()
+            );
+        }
     }
 
     public function store(Request $request)

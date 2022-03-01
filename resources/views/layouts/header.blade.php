@@ -13,7 +13,7 @@
             <ul class="navbar-nav ms-auto mx-5 px-5">
                 @auth
                     <li class="nav-item mx-3 px-3">
-                        <a class="nav-link {{request()->is('/') ? 'active' : ''}}" href="{{route('home')}}">Products</a>
+                        <a class="nav-link {{(request()->is('/') ? 'active' : request()->is('home') ?? request()->is('products')) ? 'active' : ''}}" href="{{route('home')}}">Products</a>
                     </li>
                     <li class="nav-item mx-3 px-3">
                         <a class="nav-link {{request()->is('categories') ? 'active' : ''}}" href="{{route('categories.index')}}">Categories</a>
