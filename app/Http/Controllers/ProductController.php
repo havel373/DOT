@@ -71,7 +71,8 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('product.input',compact('product'));
+        $category = Category::get();
+        return view('product.input',compact('product','category'));
     }
 
     public function update(Request $request, Product $product)
