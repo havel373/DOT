@@ -20,10 +20,6 @@ class ProductController extends Controller
         }
     }
 
-    public function store(Request $request)
-    {
-        //
-    }
 
     public function search($name){
         $result = Product::where('name','LIKE','%' .$name. '%')->get();
@@ -45,13 +41,4 @@ class ProductController extends Controller
         return new ProductResource(Product::find($id));
     }
 
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
-
-    public function destroy(Product $product)
-    {
-        //
-    }
 }

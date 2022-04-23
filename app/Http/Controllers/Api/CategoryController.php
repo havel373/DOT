@@ -20,11 +20,6 @@ class CategoryController extends Controller
         }
     }
 
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function search($name){
         $result = Category::where('name','LIKE','%' .$name. '%')->get();
         if(count($result)){
